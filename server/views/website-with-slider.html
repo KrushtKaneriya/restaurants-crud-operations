@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        };
+
+        .nav {
+            background: #2c3e50;
+            padding: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            background: #34495e;
+            color: #3498db;
+        }
+
+        .hero {
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/Welcome.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .slider-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 600px;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+        }
+
+        .slide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: rgba(0,0,0,0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .photo-grid {
+            max-width: 1200px;
+            margin: 3rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .photo-item {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 3rem 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#prices">Prices</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <h1>Welcome to Our Business</h1>
+            <p>Delivering excellence through innovation and dedication</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="images/Corporate Office.jpg" alt="Corporate Office">
+                <div class="slide-content">
+                    <h2>Modern Workspace Design</h2>
+                    <p>Creating innovative office spaces for maximum productivity</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Team Meeting.jpg" alt="Team Meeting">
+                <div class="slide-content">
+                    <h2>Collaborative Environment</h2>
+                    <p>Fostering teamwork and creativity in every project</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Project Planning.jpg" alt="Project Planning">
+                <div class="slide-content">
+                    <h2>Strategic Planning</h2>
+                    <p>Developing comprehensive solutions for complex challenges</p>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev-btn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next-btn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <h2 class="section-title">Our Portfolio</h2>
+
+    <div class="photo-grid">
+        <div class="photo-item">
+            <img src="Images/Project 1.jpg" alt="Project 1">
+            <div class="photo-caption">Office Design Project</div>
+        </div>
+        <div class="photo-item">
+            <img src="images/Project 2.jpg" alt="Project 2">
+            <div class="photo-caption">Team Building Event</div>
+        </div>
+        <div class="photo-item">
+            <img src="images/Project 3.jpg" alt="Project 3">
+            <div class="photo-caption">Client Consultation</div>
+        </div>
+        <div class="photo-item">
+            <img src="images/Project 4.jpg" alt="Project 4">
+            <div class="photo-caption">Product Launch</div>
+        </div>
+        <div class="photo-item">
+            <img src="images/Project 5.jpg" alt="Project 5">
+            <div class="photo-caption">Innovation Workshop</div>
+        </div>
+        <div class="photo-item">
+            <img src="images/Project 6.jpg" alt="Project 6">
+            <div class="photo-caption">Corporate Event</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Krushit Kaneriya. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentSlide = 0;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        });
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }, 4000);
+    </script>
+</body>
+</html>
